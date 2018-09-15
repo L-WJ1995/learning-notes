@@ -101,5 +101,5 @@
     ```
     如果p1先返回状态,那么Promise.then就响应p1的返回,p2则被抛弃,反之亦然。  
       
-5. 养成使用catch接住错误的习惯,Promise执行过程中如果发生异常,如果没有reject接住并且也没有catch,那么任何抛出的异常都会被吃掉,就算使用console.log也观察不到这些异常,Debug的时候会非常的麻烦,所以养成使用catch的习惯。
+5. 养成使用catch接住错误的习惯,Promise执行过程中如果发生异常,如果没有reject接住并且也没有catch,那么任何抛出的异常都会被吃掉,外部Promise对象和try catch都无法捕获,Debug的时候会非常的麻烦,所以养成使用catch的习惯。
 
