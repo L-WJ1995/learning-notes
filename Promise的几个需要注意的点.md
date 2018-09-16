@@ -131,16 +131,13 @@
             }, 1000)
         })
     }
+    a().then( () => {return b()}).then(c)
 
+    a().then( () => {b()}).then(c)
 
-  a().then( () => {return b()}).then(c)
+    a().then(b()).then(c)
 
-  a().then( () => {b()}).then(c)
-
-  a().then(b()).then(c)
-
-  a().then(b).then(c)
-
+    a().then(b).then(c)
    ```  
    输出结果比较有意思,因为then期望接收到一个函数,如果向then传递一个不是函数的值,会按照同步的方式执行then的参数,并且等待前一个promise返回状态后直接执行下一个then方法。
    
